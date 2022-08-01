@@ -353,11 +353,12 @@ a = CalInfo.LensletGridModel;
 b = LensletGridModel;
 a.Orientation = strcmp(a.Orientation, 'horz');
 b.Orientation = strcmp(b.Orientation, 'horz');
-FractionalDiff = abs( (struct2array(a) - struct2array(b)) ./ struct2array(a) );
-if( ~all( FractionalDiff < RectOptions.MaxGridModelDiff ) )
-    warning(['Lenslet grid models differ -- ideally the same grid model and white image are ' ...
-        ' used to decode during calibration and rectification']);
-end
+
+%FractionalDiff = abs( (struct2array(a) - struct2cell(b)) ./ struct2cell(a) );
+%if( ~all( FractionalDiff < RectOptions.MaxGridModelDiff ) )
+%    warning(['Lenslet grid models differ -- ideally the same grid model and white image are ' ...
+%        ' used to decode during calibration and rectification']);
+%end
 
 %---Perform rectification---
 [LF, RectOptions] = LFCalRectifyLF( LF, CalInfo, RectOptions );

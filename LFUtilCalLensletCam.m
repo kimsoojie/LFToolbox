@@ -91,12 +91,12 @@ function LFUtilCalLensletCam( InputPath, CalOptions )
 %---Tweakables---
 InputPath = LFDefaultVal('InputPath', '.');
 
-CalOptions = LFDefaultField( 'CalOptions', 'ExpectedCheckerSize', [19, 19] );
-CalOptions = LFDefaultField( 'CalOptions', 'ExpectedCheckerSpacing_m', [3.61, 3.61] * 1e-3 );
+CalOptions = LFDefaultField( 'CalOptions', 'ExpectedCheckerSize', [8,6] ); % [19, 19]
+CalOptions = LFDefaultField( 'CalOptions', 'ExpectedCheckerSpacing_m', [35.1, 35.0]); %[3.61, 3.61] * 1e-3
 CalOptions = LFDefaultField( 'CalOptions', 'LensletBorderSize', 1 );
 CalOptions = LFDefaultField( 'CalOptions', 'SaveResult', true );
-CalOptions = LFDefaultField( 'CalOptions', 'ForceRedoCornerFinding', false );
-CalOptions = LFDefaultField( 'CalOptions', 'ForceRedoInit', false );
+CalOptions = LFDefaultField( 'CalOptions', 'ForceRedoCornerFinding', true );
+CalOptions = LFDefaultField( 'CalOptions', 'ForceRedoInit', true );
 CalOptions = LFDefaultField( 'CalOptions', 'ShowDisplay', true );
 CalOptions = LFDefaultField( 'CalOptions', 'CalInfoFname', 'CalInfo.json' );
 

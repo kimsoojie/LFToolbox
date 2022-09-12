@@ -74,9 +74,10 @@ function LFUtilProcessWhiteImages( WhiteImagesPath, FileOptions, GridModelOption
 
 %---Defaults---
 WhiteImagesPath = LFDefaultVal( 'WhiteImagesPath', 'Cameras' );
+%WhiteImagesPath = 'C:\Users\sooji\Desktop\vatech_camera\lytro_sample' %soojie
 
 FileOptions = LFDefaultField( 'FileOptions', 'SaveResult', true );
-FileOptions = LFDefaultField( 'FileOptions', 'ForceRedo', false );
+FileOptions = LFDefaultField( 'FileOptions', 'ForceRedo', true );
 FileOptions = LFDefaultField( 'FileOptions', 'WhiteImageDatabasePath', 'WhiteImageDatabase.mat' );
 FileOptions = LFDefaultField( 'FileOptions', 'WhiteMetadataFilenamePattern', '*MOD_*.TXT' );
 FileOptions = LFDefaultField( 'FileOptions', 'WhiteRawDataFnameExtension', '.RAW' );

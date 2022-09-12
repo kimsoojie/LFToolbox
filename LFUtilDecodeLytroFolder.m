@@ -126,6 +126,8 @@ function LFUtilDecodeLytroFolder( InputPath, FileOptions, DecodeOptions, RectOpt
 
 %---Defaults---
 InputPath = LFDefaultVal( 'InputPath', 'Images' );
+%InputPath = 'C:\Users\sooji\Desktop\vatech_camera\lytro_sample\01' %soojie
+%InputPath = 'C:\Users\sooji\Desktop\vatech_camera\lytro_sample\rec\01' %soojie: Rectify
 
 FileOptions = LFDefaultField('FileOptions', 'SaveResult', true);
 FileOptions = LFDefaultField('FileOptions', 'ForceRedo', false);
@@ -136,8 +138,14 @@ DecodeOptions = LFDefaultField('DecodeOptions', 'OptionalTasks', {}); % 'ColourC
 DecodeOptions = LFDefaultField('DecodeOptions', 'ColourHistThresh', 0.01);
 DecodeOptions = LFDefaultField(...
     'DecodeOptions', 'WhiteImageDatabasePath', fullfile('Cameras','WhiteImageDatabase.mat'));
+%DecodeOptions = LFDefaultField(...
+%    'DecodeOptions', 'WhiteImageDatabasePath', fullfile('WhiteImageDatabase.mat')); %soojie
+
 RectOptions = LFDefaultField(...
     'RectOptions', 'CalibrationDatabaseFname', fullfile('Cameras','CalibrationDatabase.mat'));
+%RectOptions = LFDefaultField(...
+%    'RectOptions', 'CalibrationDatabaseFname', fullfile('CalibrationDatabase.mat')); %soojie
+
 % Used to decide if two lenslet grid models are "close enough"... if they're not a warning is raised
 RectOptions = LFDefaultField( 'RectOptions', 'MaxGridModelDiff', 1e-5 );
 

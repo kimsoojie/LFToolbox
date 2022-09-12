@@ -42,6 +42,7 @@ function LFUtilProcessCalibrations( CalibrationsPath, FileOptions )
 
 %---Defaults---
 CalibrationsPath = LFDefaultVal( 'CalibrationsPath', 'Cameras' );
+%CalibrationsPath = 'C:\Users\sooji\Desktop\vatech_camera\lytro_sample'
 
 FileOptions = LFDefaultField( 'FileOptions', 'SaveResult', true );
 FileOptions = LFDefaultField( 'FileOptions', 'CalibrationDatabaseFname', 'CalibrationDatabase.mat' );

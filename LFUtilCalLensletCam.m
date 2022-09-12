@@ -90,6 +90,7 @@ function LFUtilCalLensletCam( InputPath, CalOptions )
 
 %---Tweakables---
 InputPath = LFDefaultVal('InputPath', '.');
+%InputPath = 'C:\Users\sooji\Desktop\vatech_camera\lytro_sample\01' %soojie
 
 CalOptions = LFDefaultField( 'CalOptions', 'ExpectedCheckerSize', [8,6] ); % [19, 19]
 CalOptions = LFDefaultField( 'CalOptions', 'ExpectedCheckerSpacing_m', [35.1, 35.0]); %[3.61, 3.61] * 1e-3

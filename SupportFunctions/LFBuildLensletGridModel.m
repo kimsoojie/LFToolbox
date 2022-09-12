@@ -49,7 +49,7 @@ function [LensletGridModel, GridCoords] = LFBuildLensletGridModel( WhiteImg, Gri
 GridModelOptions = LFDefaultField( 'GridModelOptions', 'Precision', 'single' );
 GridModelOptions = LFDefaultField( 'GridModelOptions', 'CropAmt', 0 );
 GridModelOptions = LFDefaultField( 'GridModelOptions', 'CropOffset', 0 );
-DebugDisplay = LFDefaultVal( 'DebugDisplay', false );
+DebugDisplay = LFDefaultVal( 'DebugDisplay', true );
 if( numel(GridModelOptions.CropAmt) == 1 )
 	GridModelOptions.CropAmt = GridModelOptions.CropAmt .* [1,1];
 end

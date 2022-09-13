@@ -98,7 +98,8 @@ switch( lower(FileExtension) )
                 BitPacking = '10bit';
                 DecodeOptions.DemosaicOrder = 'grbg';
         end
-        LensletImage = LFReadRaw(InputFname, BitPacking);
+        %LensletImage = LFReadRaw(InputFname, BitPacking);
+        LensletImage = LFReadRaw_v(InputFname);%soojie
         
     otherwise %---Load Lytro LFP format---
         fprintf('Loading LFP %s\n', InputFname );
@@ -169,7 +170,8 @@ switch( WhiteImageMetadata.camera.model )
         fprintf('Unrecognized camera model, skipping...\');
         return
 end
-WhiteImage = LFReadRaw( WhiteRawFname, BitPacking ); 
+%WhiteImage = LFReadRaw( WhiteRawFname, BitPacking ); 
+WhiteImage = LFReadRaw_v( WhiteRawFname); %soojie
 
 %---Decode---
 fprintf('Decoding lenslet image :');

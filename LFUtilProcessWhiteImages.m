@@ -75,6 +75,7 @@ function LFUtilProcessWhiteImages( WhiteImagesPath, FileOptions, GridModelOption
 %---Defaults---
 WhiteImagesPath = LFDefaultVal( 'WhiteImagesPath', 'Cameras' );
 %WhiteImagesPath = 'C:\Users\sooji\Desktop\vatech_camera\lytro_sample' %soojie
+WhiteImagesPath = 'C:\Users\sooji\Desktop\vatech_camera\test' %soojie
 
 FileOptions = LFDefaultField( 'FileOptions', 'SaveResult', true );
 FileOptions = LFDefaultField( 'FileOptions', 'ForceRedo', true );
@@ -140,8 +141,8 @@ for( iFile = 1:length(WhiteImageInfo) )
         ImgSize = [WhiteImageMetadata.image.width, WhiteImageMetadata.image.height];
         switch( WhiteImageInfo(iFile).CamModel )
             case 'F01'
-                WhiteImage = LFReadRaw( CurRawImageFname, '12bit' );
-                
+                %WhiteImage = LFReadRaw( CurRawImageFname, '12bit' );
+                 WhiteImage = LFReadRaw_v( CurRawImageFname );%soojie
                 %---Detect very dark images in F01 camera---
                 if( mean(WhiteImage(:)) < FileOptions.WhiteImageMinMeanIntensity )
                     fprintf('Detected dark image, skipping and not adding to database\n');
@@ -151,7 +152,7 @@ for( iFile = 1:length(WhiteImageInfo) )
                 
             case 'B01'
                 WhiteImage = LFReadRaw( CurRawImageFname, '10bit' );
-                
+          
             otherwise
                 error('Unrecognized camera model');
         end
